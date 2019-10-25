@@ -31,7 +31,7 @@ $(function () {
 });
 {{< / highlight >}}
 2. Прогнать код через <a href="https://obfuscator.io/" target="_blank">обфускатор1</a>
-3. Проганать код через <a href="https://javascriptobfuscator.com/Javascript-Obfuscator.aspx" target="_blank">обфускатор2</a>
+3. Получившийся код прогнать код через <a href="https://javascriptobfuscator.com/Javascript-Obfuscator.aspx" target="_blank">обфускатор2</a>
 4. Создать файл `js/1.js` и вставить результат работы обфускатора в него
 5. Вставить на странице `white.html` перед закрывающим `</body>` код:
 {{< highlight html >}}
