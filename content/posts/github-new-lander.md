@@ -105,7 +105,7 @@ M4Leads
 				data: data,
 				success: function (r) {
 					$(button).text(buttonText);
-					location.href = 'thanks.html';
+					location.href = '../thanks.html';
 				}
 			})
 		});
