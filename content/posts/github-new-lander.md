@@ -19,7 +19,7 @@ draft: false
 <script>
 	$(function() {
 		if (url('?pixel')) Cookies.set('pixel', url('?pixel'), {expires: 30});
-	}
+	});
 </script>
 {{< / highlight >}}
 
