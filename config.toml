@@ -1,0 +1,12 @@
+baseURL = "https://deniszhitnyakov.github.io/crocoblog/public/"
+languageCode = "ru-RU"
+title = "Croco Blog"
+theme = "solar"
+
+[params]
+  scheme = "gray"
+
+[menu]
+  [[menu.main]]
+    name = "Posts"
+    url = "/"
