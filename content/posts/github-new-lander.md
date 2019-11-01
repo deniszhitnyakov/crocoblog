@@ -44,12 +44,12 @@ Everad
 <script>
     $(function () {
         $('form').submit(function (e) {
-			
-			form = this;
 			e.preventDefault();
+
+            form = this;
+            button = $(this).find('button[type="submit"]');
+            buttonText = $(button).text();
 			
-			button = $(this).find('button[type="submit"]');
-			buttonText = $(button).text();
 			$(button).text('Обработка...');
 			
             data = {
@@ -60,6 +60,16 @@ Everad
                 country_code: 'RU',
                 click_id: Cookies.get('click_id')
 			};
+
+			if (!data.fullName) {
+                alert('Заполните ФИО!');
+                return;
+            }
+
+            if (!data.phone) {
+                alert('Введите телефон!');
+                return;
+            }
 			
 			console.log(data);
 			
@@ -68,7 +78,7 @@ Everad
                 data: data,
                 success: function (r) {
                     $(button).text(buttonText);
-                    location.href = '../thanks.html';
+                    location.href = 'thanks.html';
                 }
             })
         });
@@ -83,11 +93,12 @@ M4Leads
 <script>
 	$(function () {
 		$('form').submit(function (e) {
-			form = this;
 			e.preventDefault();
 
-			button = $(this).find('button[type="submit"]');
-			buttonText = $(button).text();
+            form = this;
+            button = $(this).find('button[type="submit"]');
+            buttonText = $(button).text();
+
 			$(button).text('Обработка...');
 
 			data = {
@@ -101,6 +112,16 @@ M4Leads
 				sub_id: ['dolphin', Cookies.get('click_id')]
 			};
 
+			if (!data.fullName) {
+                alert('Заполните ФИО!');
+                return;
+            }
+
+            if (!data.phone) {
+                alert('Введите телефон!');
+                return;
+            }
+
 			console.log(data);
 			
 			$.ajax('https://api.m4leads.com/order/add', {
@@ -108,7 +129,7 @@ M4Leads
 				data: data,
 				success: function (r) {
 					$(button).text(buttonText);
-					location.href = '../thanks.html';
+					location.href = 'thanks.html';
 				}
 			})
 		});

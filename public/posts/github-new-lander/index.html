@@ -74,12 +74,12 @@
 &lt;<span style="color:#f92672">script</span>&gt;
     <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">function</span> () {
         <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;form&#39;</span>).<span style="color:#a6e22e">submit</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
-			
-			<span style="color:#a6e22e">form</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
 			<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">preventDefault</span>();
+
+            <span style="color:#a6e22e">form</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
+            <span style="color:#a6e22e">button</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;button[type=&#34;submit&#34;]&#39;</span>);
+            <span style="color:#a6e22e">buttonText</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#a6e22e">button</span>).<span style="color:#a6e22e">text</span>();
 			
-			<span style="color:#a6e22e">button</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;button[type=&#34;submit&#34;]&#39;</span>);
-			<span style="color:#a6e22e">buttonText</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#a6e22e">button</span>).<span style="color:#a6e22e">text</span>();
 			<span style="color:#a6e22e">$</span>(<span style="color:#a6e22e">button</span>).<span style="color:#a6e22e">text</span>(<span style="color:#e6db74">&#39;Обработка...&#39;</span>);
 			
             <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {
@@ -90,6 +90,16 @@
                 <span style="color:#a6e22e">country_code</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;RU&#39;</span>,
                 <span style="color:#a6e22e">click_id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Cookies</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;click_id&#39;</span>)
 			};
+
+			<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">fullName</span>) {
+                <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Заполните ФИО!&#39;</span>);
+                <span style="color:#66d9ef">return</span>;
+            }
+
+            <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">phone</span>) {
+                <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Введите телефон!&#39;</span>);
+                <span style="color:#66d9ef">return</span>;
+            }
 			
 			<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
 			
@@ -98,7 +108,7 @@
                 <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">data</span>,
                 <span style="color:#a6e22e">success</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">r</span>) {
                     <span style="color:#a6e22e">$</span>(<span style="color:#a6e22e">button</span>).<span style="color:#a6e22e">text</span>(<span style="color:#a6e22e">buttonText</span>);
-                    <span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;../thanks.html&#39;</span>;
+                    <span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;thanks.html&#39;</span>;
                 }
             })
         });
@@ -111,11 +121,12 @@
 &lt;<span style="color:#f92672">script</span>&gt;
 	<span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">function</span> () {
 		<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;form&#39;</span>).<span style="color:#a6e22e">submit</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">e</span>) {
-			<span style="color:#a6e22e">form</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
 			<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">preventDefault</span>();
 
-			<span style="color:#a6e22e">button</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;button[type=&#34;submit&#34;]&#39;</span>);
-			<span style="color:#a6e22e">buttonText</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#a6e22e">button</span>).<span style="color:#a6e22e">text</span>();
+            <span style="color:#a6e22e">form</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
+            <span style="color:#a6e22e">button</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;button[type=&#34;submit&#34;]&#39;</span>);
+            <span style="color:#a6e22e">buttonText</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#a6e22e">button</span>).<span style="color:#a6e22e">text</span>();
+
 			<span style="color:#a6e22e">$</span>(<span style="color:#a6e22e">button</span>).<span style="color:#a6e22e">text</span>(<span style="color:#e6db74">&#39;Обработка...&#39;</span>);
 
 			<span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {
@@ -129,6 +140,16 @@
 				<span style="color:#a6e22e">sub_id</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;dolphin&#39;</span>, <span style="color:#a6e22e">Cookies</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;click_id&#39;</span>)]
 			};
 
+			<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">fullName</span>) {
+                <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Заполните ФИО!&#39;</span>);
+                <span style="color:#66d9ef">return</span>;
+            }
+
+            <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">phone</span>) {
+                <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Введите телефон!&#39;</span>);
+                <span style="color:#66d9ef">return</span>;
+            }
+
 			<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
 			
 			<span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">ajax</span>(<span style="color:#e6db74">&#39;https://api.m4leads.com/order/add&#39;</span>, {
@@ -136,7 +157,7 @@
 				<span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">data</span>,
 				<span style="color:#a6e22e">success</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">r</span>) {
 					<span style="color:#a6e22e">$</span>(<span style="color:#a6e22e">button</span>).<span style="color:#a6e22e">text</span>(<span style="color:#a6e22e">buttonText</span>);
-					<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;../thanks.html&#39;</span>;
+					<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;thanks.html&#39;</span>;
 				}
 			})
 		});
