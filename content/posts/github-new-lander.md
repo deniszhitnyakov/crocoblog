@@ -42,47 +42,47 @@ Everad
 {{< highlight html >}}
 <!-- ИНТЕГРАЦИЯ С ПП -->
 <script>
-    $(function () {
-        $('form').submit(function (e) {
-			e.preventDefault();
+    $(function() {
+    $('body').on('submit', 'form', function(e) {
+        e.preventDefault();
 
-            form = this;
-            button = $(this).find('button[type="submit"]');
-            buttonText = $(button).text();
-			
-			$(button).text('Обработка...');
-			
-            data = {
-                fullName: $(this).find('input[name="name"]').val(),
-                campaign_id: 906780	,
-                ip: window.ip,
-                phone: $(this).find('input[name="phone"]').val(),
-                country_code: 'RU',
-                click_id: Cookies.get('click_id')
-			};
+        form = this;
+        button = $(this).find('button[type="submit"]');
+        buttonText = $(button).text();
 
-			if (!data.fullName) {
-                alert('Заполните ФИО!');
-                return;
+        $(button).text('Обработка...');
+
+        data = {
+            fullName: $(this).find('input[name="name"]').val(),
+            campaign_id: 906780,
+            ip: window.ip,
+            phone: $(this).find('input[name="phone"]').val(),
+            country_code: 'RU',
+            click_id: Cookies.get('click_id')
+        };
+
+        if (!data.fullName) {
+            alert('Заполните ФИО!');
+            return;
+        }
+
+        if (!data.phone) {
+            alert('Введите телефон!');
+            return;
+        }
+
+        console.log(data);
+
+        $.ajax('https://beta.dolphin.ru.com/everad.php', {
+            method: 'post',
+            data: data,
+            success: function(r) {
+                $(button).text(buttonText);
+                location.href = '../thanks.html';
             }
-
-            if (!data.phone) {
-                alert('Введите телефон!');
-                return;
-            }
-			
-			console.log(data);
-			
-            $.ajax('https://beta.dolphin.ru.com/everad.php', {
-                method: 'post',
-                data: data,
-                success: function (r) {
-                    $(button).text(buttonText);
-                    location.href = 'thanks.html';
-                }
-            })
         });
-    })
+    });
+});
 </script>
 {{< / highlight >}}
 
@@ -91,48 +91,48 @@ M4Leads
 {{< highlight html >}}
 <!-- ИНТЕГРАЦИЯ С ПП -->
 <script>
-	$(function () {
-		$('form').submit(function (e) {
-			e.preventDefault();
+	$(function() {
+    $('body').on('submit', 'form', function(e) {
+        e.preventDefault();
 
-            form = this;
-            button = $(this).find('button[type="submit"]');
-            buttonText = $(button).text();
+        form = this;
+        button = $(this).find('button[type="submit"]');
+        buttonText = $(button).text();
 
-			$(button).text('Обработка...');
+        $(button).text('Обработка...');
 
-			data = {
-				fullName: $(this).find('input[name="name"]').val(),
-				offerId: 322,
-				phone: $(this).find('input[name="phone"]').val(),
-				partnerId: 293895,
-				'access-token': '71c437d5bf75a76ff5d89c24b567f047',
-				country: 'KZ',
-				price: 0,
-				sub_id: ['dolphin', Cookies.get('click_id')]
-			};
+        data = {
+            fullName: $(this).find('input[name="name"]').val(),
+            offerId: 322,
+            phone: $(this).find('input[name="phone"]').val(),
+            partnerId: 293895,
+            'access-token': '71c437d5bf75a76ff5d89c24b567f047',
+            country: 'KZ',
+            price: 0,
+            sub_id: ['dolphin', Cookies.get('click_id')]
+        };
 
-			if (!data.fullName) {
-                alert('Заполните ФИО!');
-                return;
+        if (!data.fullName) {
+            alert('Заполните ФИО!');
+            return;
+        }
+
+        if (!data.phone) {
+            alert('Введите телефон!');
+            return;
+        }
+
+        console.log(data);
+
+        $.ajax('https://api.m4leads.com/order/add', {
+            method: 'get',
+            data: data,
+            success: function(r) {
+                $(button).text(buttonText);
+                location.href = '../thanks.html';
             }
-
-            if (!data.phone) {
-                alert('Введите телефон!');
-                return;
-            }
-
-			console.log(data);
-			
-			$.ajax('https://api.m4leads.com/order/add', {
-				method: 'get',
-				data: data,
-				success: function (r) {
-					$(button).text(buttonText);
-					location.href = 'thanks.html';
-				}
-			})
-		});
-	})
+        })
+    });
+});
 </script>
 {{< / highlight >}}
