@@ -9,16 +9,7 @@ draft: false
 
 {{< highlight html >}}
 <!-- НЕОБХОДИМЫЕ СКРИПТЫ -->
-<script>
-	if(typeof jQuery=='undefined')
-	{
-		var headTag = document.getElementsByTagName("head")[0];
-		var jqTag = document.createElement('script');
-		jqTag.type = 'text/javascript';
-		jqTag.src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js';
-		headTag.appendChild(jqTag);
-	}
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-url/2.5.3/url.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
 {{< / highlight >}}
