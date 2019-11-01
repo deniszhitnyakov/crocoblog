@@ -40,9 +40,16 @@
       
       <guid>https://deniszhitnyakov.github.io/crocoblog/public/posts/github-new-prelander/</guid>
       <description>1. Добавление небходимых скриптов 1.1 Перед закрывающим &amp;lt;/body&amp;gt; добавить:
+<<<<<<< HEAD
 &amp;lt;!-- НЕОБХОДИМЫЕ СКРИПТЫ --&amp;gt; &amp;lt;script&amp;gt; if(typeof jQuery==&amp;#39;undefined&amp;#39;) { var headTag = document.getElementsByTagName(&amp;#34;head&amp;#34;)[0]; var jqTag = document.createElement(&amp;#39;script&amp;#39;); jqTag.type = &amp;#39;text/javascript&amp;#39;; jqTag.src = &amp;#39;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js&amp;#39;; headTag.appendChild(jqTag); } &amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/js-url/2.5.3/url.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 1.2 После этого добавить:
 &amp;lt;!-- ЗАПИСЬ ПИКСЕЛЯ В COOKIES --&amp;gt; &amp;lt;script&amp;gt; $(function() { if (url(&amp;#39;?pixel&amp;#39;)) Cookies.set(&amp;#39;pixel&amp;#39;, url(&amp;#39;?pixel&amp;#39;), {expires: 30}); }); &amp;lt;/script&amp;gt; 2. Добавление скрипта трекера После необходимых скриптов добавить:
 &amp;lt;!-- DOLPHIN ТРЕКЕР --&amp;gt; &amp;lt;script src=&amp;#34;https://beta.</description>
+=======
+&amp;lt;!-- НЕОБХОДИМЫЕ СКРИПТЫ --&amp;gt; &amp;lt;script src=&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js&amp;#34; integrity=&amp;#34;sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=&amp;#34; crossorigin=&amp;#34;anonymous&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/js-url/2.5.3/url.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 1.2 После этого добавить:
+&amp;lt;script&amp;gt; $(function() { if (url(&amp;#39;?pixel&amp;#39;)) Cookies.set(&amp;#39;pixel&amp;#39;, url(&amp;#39;?pixel&amp;#39;), {expires: 30}); }); &amp;lt;/script&amp;gt; 2. Добавление скрипта трекера После необходимых скриптов добавить:
+&amp;lt;!-- DOLPHIN ТРЕКЕР --&amp;gt; &amp;lt;script src=&amp;#34;https://beta.dolphin.ru.com/js/tracker.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 3. Получение IP посетителя После скрипта трекера добавить:
+&amp;lt;!-- ПОЛУЧЕНИЕ IP ПОСЕТИТЕЛЯ --&amp;gt; &amp;lt;script&amp;gt; $.getJSON(&amp;#34;http://gd.geobytes.com/GetCityDetails?callback=?&amp;#34;,function(t){window.ip=t.geobytesremoteip}); &amp;lt;/script&amp;gt; 4. Добавление формы заказа 4.</description>
+>>>>>>> parent of fabcdf6... fixes
     </item>
     
   </channel>

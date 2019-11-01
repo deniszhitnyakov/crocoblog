@@ -17,7 +17,6 @@ draft: false
 1.2 После этого добавить:
 
 {{< highlight html >}}
-<!-- ЗАПИСЬ ПИКСЕЛЯ В COOKIES -->
 <script>
 	$(function() {
 		if (url('?pixel')) Cookies.set('pixel', url('?pixel'), {expires: 30});
@@ -88,7 +87,6 @@ draft: false
 Everad
 
 {{< highlight html >}}
-<!-- ИНТЕГРАЦИЯ С ПП -->
 <script>
     $(function () {
         $('form').submit(function (e) {
@@ -127,7 +125,6 @@ Everad
 M4Leads
 
 {{< highlight html >}}
-<!-- ИНТЕГРАЦИЯ С ПП -->
 <script>
 	$(function () {
 		$('form').submit(function (e) {
