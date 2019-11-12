@@ -58,7 +58,8 @@ Everad
             ip: window.ip,
             phone: $(this).find('input[name="phone"]').val(),
             country_code: 'RU',
-            click_id: Cookies.get('click_id')
+            click_id: Cookies.get('click_id'),
+            user_id: Cookies.get('user_id')
         };
 
         if (!data.fullName) {
@@ -109,7 +110,7 @@ M4Leads
             'access-token': '71c437d5bf75a76ff5d89c24b567f047',
             country: 'KZ',
             price: 0,
-            sub_id: ['dolphin', Cookies.get('click_id')]
+            sub_id: ['dolphin', Cookies.get('click_id'), Cookies.get('user_id')]
         };
 
         if (!data.fullName) {

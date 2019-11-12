@@ -128,7 +128,8 @@
             <span style="color:#a6e22e">ip</span><span style="color:#f92672">:</span> window.<span style="color:#a6e22e">ip</span>,
             <span style="color:#a6e22e">phone</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;input[name=&#34;phone&#34;]&#39;</span>).<span style="color:#a6e22e">val</span>(),
             <span style="color:#a6e22e">country_code</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;RU&#39;</span>,
-            <span style="color:#a6e22e">click_id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Cookies</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;click_id&#39;</span>)
+            <span style="color:#a6e22e">click_id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Cookies</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;click_id&#39;</span>),
+            <span style="color:#a6e22e">user_id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Cookies</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;user_id&#39;</span>)
         };
 
         <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">fullName</span>) {
@@ -177,7 +178,7 @@
             <span style="color:#e6db74">&#39;access-token&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;71c437d5bf75a76ff5d89c24b567f047&#39;</span>,
             <span style="color:#a6e22e">country</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;KZ&#39;</span>,
             <span style="color:#a6e22e">price</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
-            <span style="color:#a6e22e">sub_id</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;dolphin&#39;</span>, <span style="color:#a6e22e">Cookies</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;click_id&#39;</span>)]
+            <span style="color:#a6e22e">sub_id</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;dolphin&#39;</span>, <span style="color:#a6e22e">Cookies</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;click_id&#39;</span>), <span style="color:#a6e22e">Cookies</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;user_id&#39;</span>)]
         };
 
         <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">fullName</span>) {
